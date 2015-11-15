@@ -2,7 +2,7 @@
 FROM ubuntu:14.04
 
 # install dependencies
-RUN apt-get update
+RUN apt-get -qq update
 RUN apt-get install -y autoconf automake libtool
 RUN apt-get install -y libpng12-dev
 RUN apt-get install -y libjpeg62-dev
@@ -48,9 +48,9 @@ RUN make install
 RUN ldconfig
 RUN cd ..
 
-# download the relevant Tesseract English Language Packages
-RUN wget https://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz
-RUN tar -xf tesseract-ocr-3.02.eng.tar.gz
+# download the relevant Tesseract Swedish Language Packages
+RUN wget https://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.swe.tar.gz
+RUN tar -xf tesseract-ocr-3.02.swe.tar.gz
 RUN sudo cp -r tesseract-ocr/tessdata /usr/local/share/
 
 # update working directories
