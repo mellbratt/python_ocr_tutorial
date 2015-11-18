@@ -18,6 +18,7 @@ def main():
 def ocr():
     try:
         url = request.json['image_url']
+        print image_url
         if 'jpg' in url:
             output = process_image(url)
             return jsonify({"output": output})
